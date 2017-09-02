@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Basics for D</title>
+</head>
+<body>
+
+  <h2>1. Display Time and Date</h2>
+  <p> Today is: <span id="day"></span> </p>
+  <p> Current time is: <span id="time"></span> </p>
+
+
+  <h2>2. Write a JavaScript program to print the contents of the current window.</h2>
+  <button onclick="printPage()">Click me to print this page</button>
+
+
+  <h2>3. Write a JavaScript program to get the current date.</h2>
+  <p>Current Date: <span id="date"></span></p>
+
+
+  <h2>4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7.</h2>
+  <p>Area: <span id="area"></span></p>
+
+
+  <h2>6. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.</h2>
+  <p>Enter Year: <span> <input id="yr_input"> <button type="button" onclick="chckYr()"> Leap Year? </button> </span> </p>
+  <p id="lp_yr_or_no"></p>
+
+
+  <h2>10. Write a JavaScript program to calculate multiplication and division of two numbers (input from user).</h2>
+  <p>Enter 1st Number: <span> <input id="first_num_input"></span></p>
+  <p>Enter 2nd Number: <span> <input id="second_num_input"></span></p>
+  <button type="button" onclick="add()">Add</button> <button type="button" onclick="subtract()">Subtract</button> <button type="button" onclick="multiply()">Multiply</button> <button type="button" onclick="divide()">Divide</button>
+  <p id="comp"></p>
+
+
+  <h2>11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.</h2>
+  <p>Enter Temperature: <span> <input id="temperature"></span></p>
+  <button type="button" onclick="cTof()">Convert to Fahrenheit</button> <button type="button" onclick="fToc()">Convert to Celsius</button>
+  <p id="conv"></p>
+
+
+  <h2>16. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum.</h2>
+  <p>Enter 1st Number: <span> <input id="first_add_input"></span></p>
+  <p>Enter 2nd Number: <span> <input id="second_add_input"></span></p>
+  <button type="button" onclick="sum_or_triple_sum()">Add</button>
+  <p id="sum_or_triple_sum"></p>
+
+
+  <h2>18. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.</h2>
+  <p>Enter 1st Number: <span> <input id="first_add_fifty_input"></span></p>
+  <p>Enter 2nd Number: <span> <input id="second_add_fifty_input"></span></p>
+  <button type="button" onclick="fifty_or_not()">Check for 50</button>
+  <p id="fifty_or_not"></p>
+
+
+  <h2>19. Write a JavaScript program to check a given integer is within 20 of 100 or 400.</h2>
+  <p>Enter Number: <span> <input id="integer_20_100_400"></span></p>
+  <button type="button" onclick="twenty_onehundred_fourhundred()">Check</button>
+  <p id="check_int"></p>
+
+
+
+  <!----------------------------------------------------JAVASCRIPT----------------------------------------------->
+  <script>
+
+  //----------------------------------------------------EX 1 and 3-----------------------------------------------//
+  var date = new Date();
+  var day_names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  document.getElementById("day").innerHTML = day_names[date.getDay()];
+
+  hr = date.getHours();
+  min = date.getMinutes();
+  sec = date.getSeconds();
+  if (hr < 12) {
+    hr = hr + " AM ";
+  } else {
+    hr = (hr-12) + " PM "
+  }
+  if (min<10) {
+    min="0"+min;
+  }
+  if (sec<10) {
+    sec="0"+sec;
+  }
+  cur_time = hr + ":" + min + ":" + sec;
+  document.getElementById("time").innerHTML = cur_time;
+  mo = date.getMonth()+1;
+  if (mo<10) {
+    mo="0"+mo;
+  }
+  da = date.getDate();
+  if (da<10) {
+    da="0"+da;
+  }
+
+  yr = date.getFullYear();
+  var mo_da_yr = mo + "-" + da + "-" + yr;
+  document.getElementById("date").innerHTML = mo_da_yr;
+  //----------------------------------------------------EX 1 and 3-----------------------------------------------//
+
+
+  //----------------------------------------------------EX 2-----------------------------------------------//
+  function printPage() {
+      window.print();
+  }
+  //----------------------------------------------------EX 2-----------------------------------------------//
+
+  //----------------------------------------------------EX 4-----------------------------------------------//
+  p = (5+6+7)/2;
+  area = Math.sqrt(p*(p-5)*(p-6)*(p-7));
+  document.getElementById("area").innerHTML = area;
+  //----------------------------------------------------EX 4-----------------------------------------------//
+
+
+  //----------------------------------------------------EX 6-----------------------------------------------//
+  function chckYr() {
+    var ans;
+    var yr_input = document.getElementById("yr_input").value;
+
+    if (yr_input%4==0) {
+      ans = "This is a Leap Year";
+    } else {
+      ans = "This is NOT a Leap Year";
+    }
+    document.getElementById("lp_yr_or_no").innerHTML = ans;
+  }
+  //----------------------------------------------------EX 6-----------------------------------------------//
+
+
+  //----------------------------------------------------EX 10-----------------------------------------------//
+  function multiply() {
+    var first_num_input = document.getElementById("first_num_input").value;
+    var second_num_input = document.getElementById("second_num_input").value;
+    var ans = first_num_input * second_num_input;
+    document.getElementById("comp").innerHTML = ans;
+
+  }
+
+  function divide() {
+    var first_num_input = document.getElementById("first_num_input").value;
+    var second_num_input = document.getElementById("second_num_input").value;
+    var ans = first_num_input / second_num_input;
+    document.getElementById("comp").innerHTML = ans;
+  }
+
+  function add() {
+    var first_num_input = parseInt(document.getElementById("first_num_input").value);
+    var second_num_input = parseInt(document.getElementById("second_num_input").value);
+    var ans = first_num_input + second_num_input;
+    document.getElementById("comp").innerHTML = ans;
+  }
+
+  function subtract() {
+    var first_num_input = document.getElementById("first_num_input").value;
+    var second_num_input = document.getElementById("second_num_input").value;
+    var ans = first_num_input - second_num_input;
+    document.getElementById("comp").innerHTML = ans;
+  }
+  //----------------------------------------------------EX 10-----------------------------------------------//
+
+
+  //----------------------------------------------------EX 11----------------------------------------------//
+  function cTof() {
+    var temperature = document.getElementById("temperature").value;
+    var conv = 9/5*temperature+32;
+    document.getElementById("conv").innerHTML = conv;
+  }
+
+  function fToc() {
+    var temperature = document.getElementById("temperature").value;
+    var conv = 5/9*(temperature-32);
+    document.getElementById("conv").innerHTML = conv;
+  }
+  //----------------------------------------------------EX 11----------------------------------------------//
+
+
+  //----------------------------------------------------EX 16----------------------------------------------//
+  function sum_or_triple_sum() {
+    var first_add_input = parseInt(document.getElementById("first_add_input").value);
+    var second_add_input = parseInt(document.getElementById("second_add_input").value);
+    if (first_add_input == second_add_input) {
+      var sum = "Their Sum is " + (first_add_input + second_add_input) + ". Thrice their sum is " + (first_add_input + second_add_input) * 3 + ".";
+    } else {
+      var sum = "Their Sum is " + (first_add_input + second_add_input)+ ".";
+    }
+    document.getElementById("sum_or_triple_sum").innerHTML = sum;
+  }
+  //----------------------------------------------------EX 16----------------------------------------------//
+
+
+  //----------------------------------------------------EX 18----------------------------------------------//
+  function fifty_or_not(){
+    var first_add_fifty_input = parseInt(document.getElementById("first_add_fifty_input").value);
+    var second_add_fifty_input = parseInt(document.getElementById("second_add_fifty_input").value);
+    var sum_fifty = first_add_fifty_input + second_add_fifty_input;
+    if (first_add_fifty_input == 50) {
+      if (second_add_fifty_input == 50) {
+        var fifty_or_not = "First Number and second number is 50.";
+      } else {
+          var fifty_or_not = "First Number is 50.";
+        }
+    } else {
+        if (second_add_fifty_input == 50) {
+          var fifty_or_not = "Second Number is 50.";
+        } else {
+            if (sum_fifty ==50) {
+              var fifty_or_not = "Sum is 50.";
+            } else {
+                var fifty_or_not = "Neither the first number, second number, or their sum is 50.";
+              }
+          }
+      }
+
+    document.getElementById("fifty_or_not").innerHTML = fifty_or_not;
+  }
+  //----------------------------------------------------EX 18----------------------------------------------//
+
+  //----------------------------------------------------EX 19----------------------------------------------//
+  function twenty_onehundred_fourhundred() {
+    var integer_20_100_400 = parseInt(document.getElementById("integer_20_100_400").value);
+    if (isNaN(integer_20_100_400)) {
+      var check_int = "Input is not an integer.";
+    } else {
+        if (integer_20_100_400 == 400) {
+          var check_int = "Integer is equal to 400.";
+        } else {
+            if (integer_20_100_400 < 100 && integer_20_100_400 > 20) {
+              var check_int = "Integer is within 20 and 100.";
+            } else {
+                var check_int = "Integer is neither within 20 and 100 or equal to 400.";
+              }
+          }
+      }
+    document.getElementById("check_int").innerHTML = check_int;
+  }
+  //----------------------------------------------------EX 19----------------------------------------------//
+
+  </script>
+
+</body>
+</html>
