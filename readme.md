@@ -1,4 +1,4 @@
-## **[![JS](http://i1202.photobucket.com/albums/bb362/tremor221/Vivixx/VCJS/JSLogo.png "JavaScript")](https://www.javascript.com/) VIVIXX CHALLENGES**
+## **[![JS](https://user-images.githubusercontent.com/29721601/30682831-a78f4c12-9edd-11e7-86bc-3a2634c1c18c.png "JavaScript")](https://www.javascript.com/) VIVIXX CHALLENGES**
 
 These are JavaScript challenges from the Vivixx Bootcamp.
 
