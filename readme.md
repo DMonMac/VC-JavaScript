@@ -3,6 +3,7 @@
 These are JavaScript challenges from the Vivixx Bootcamp.
 
 ### Contents
-1. JsExW3 - _Working on the exercises for JavaScript on w3resource._
-2. LibResearch - _A Research on JS Libraries._
-3. SoundKit - _JavaScript exercise on creating piano keys with sound._
+1. CodeWars - _Codes used to answer kata_
+2. JsExW3 - _Working on the exercises for JavaScript on w3resource._
+3. LibResearch - _A Research on JS Libraries._
+4. SoundKit - _JavaScript exercise on creating piano keys with sound._
