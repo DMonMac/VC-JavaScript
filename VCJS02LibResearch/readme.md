@@ -108,8 +108,7 @@ A basic Polymer element definition looks like this:
     </dom-module>
 ````
 
-## [![mousetrap](https://user-images.githubusercontent.com/29721601/31208301-734c227a-a9b6-11e7-8b67-3a533af7150d.png "mousetrap")
-](https://craig.is/killing/mice)
+## [![mousetrap](https://user-images.githubusercontent.com/29721601/31208301-734c227a-a9b6-11e7-8b67-3a533af7150d.png "mousetrap")](https://craig.is/killing/mice)
 
 ### A simple library for handling keyboard shortcuts in Javascript.
 
