@@ -4,7 +4,7 @@
  - Organized collection of useful functions to handle strings, dates, HTML DOM elements, events, cookies, animations, network requests, and more. These are codes that have already been written by other developers.
  - Usually focus on a single piece of functionality that you access using an Application Program Interface (API). You call a library function, it executes some code and then the control is returned to your code.
  - Can be implemented however you choose. Think of it like a selection of car components: you’re free to use any to help construct a working vehicle but you must build the engine yourself.
-- A library could cut development time by 20% because you don’t have to worry about the finer details. 
+- A library could cut development time by 20% because you don’t have to worry about the finer details.
     - Downsides:
         - A bug within a library can be difficult to locate and fix.
         - There’s no guarantee the development team will release a patch quickly.
@@ -28,18 +28,18 @@ Datejs is an open source JavaScript Date library for parsing, formatting and pro
 
 ### Example (native JavaScript, without Datejs)
 ```
- var temp = new Date(); 
+ var temp = new Date();
  temp.setHours(0);
  temp.setMinutes(0);
  temp.setSeconds(0);
  temp.setMilliseconds(0);
- 
+
  var today = new Date(someDate.getTime()); // clone original instance so we don't actually change the original date.
  var today.setHours(0);
  var today.setMinutes(0);
  var today.setSeconds(0);
  var today.setMilliseconds(0);
-  
+
  (today == temp); // true|false
 ```
 
@@ -48,7 +48,7 @@ Datejs is an open source JavaScript Date library for parsing, formatting and pro
 ```
 // with Datejs
 someDate.clone().clearTime().equals(Date.today());
- 
+
 ```
 
 ## Polymer
@@ -108,7 +108,8 @@ A basic Polymer element definition looks like this:
     </dom-module>
 ````
 
-## [![](http://i1202.photobucket.com/albums/bb362/tremor221/Vivixx/mousetrap.png)](https://craig.is/killing/mice)
+## [![mousetrap](https://user-images.githubusercontent.com/29721601/31208301-734c227a-a9b6-11e7-8b67-3a533af7150d.png "mousetrap")
+](https://craig.is/killing/mice)
 
 ### A simple library for handling keyboard shortcuts in Javascript.
 
